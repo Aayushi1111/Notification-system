@@ -7,10 +7,14 @@ function PostBlog() {
 
   const postBlog = async () => {
     try {
-      await axios.post('http://localhost:4000/api/post-blog', { userId, content });
+      await axios.post('https://notification-system-btkn.onrender.com/api/post-blog', {
+        userId,
+        content
+      });
       alert('Blog posted and followers notified!');
     } catch (err) {
       alert('Failed to post blog.');
+      console.error(err);
     }
   };
 

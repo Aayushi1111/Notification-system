@@ -9,7 +9,7 @@ const NotificationViewer = () => {
 
   const handleSend = async () => {
     try {
-      await axios.post('http://localhost:4000/api/notifications', {
+      await axios.post('https://notification-system-btkn.onrender.com/api/notifications', {
         userId: inputId,
         message: message
       });
@@ -21,7 +21,7 @@ const NotificationViewer = () => {
 
   const handleFetch = async () => {
     try {
-      const response = await axios.get(`http://localhost:4000/api/notifications/${fetchId}`);
+      const response = await axios.get(`https://notification-system-btkn.onrender.com/api/notifications/${fetchId}`);
       setNotifications(response.data);
       console.log('Fetched notifications:', response.data);
     } catch (err) {
@@ -33,6 +33,7 @@ const NotificationViewer = () => {
   return (
     <div style={{ padding: '2rem', fontFamily: 'Arial' }}>
       <h1><b>Notification System (POC)</b></h1>
+
       <h2>Send Notification</h2>
       <input
         type="text"
